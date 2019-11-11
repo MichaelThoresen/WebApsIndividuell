@@ -11,6 +11,6 @@ namespace VySPA.Models.Entities
 
         public String QuestionText { get; set; }
 
-        public string AnswerText { get; set; }
+        public String AnswerText { get; set; }
     }
 }
