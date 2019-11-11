@@ -37,5 +37,32 @@ namespace VySPA.Db.Repository
 
             return dtos;
         }
+
+        public void UpdateQuestion(Question q)
+        {
+            var entity = _context.Question.FirstOrDefault(question => question.Id == q.Id);
+            if(entity != null)
+            {
+                entity.QuestionText = q.QuestionText;
+                entity.AnswerText = q.AnswerText;
+                entity.Rating = q.Rating;
+
+                _context.Question.Update(entity);
+
+                _context.SaveChanges();
+                
+            }
+        }
+
+        public Question MapQuestion(QuestionDTO q)
+        {
+            return new Question
+            {
+                Id = q.Id,
+                QuestionText = q.QuestionText,
+                AnswerText = q.AnswerText,
+                Rating = q.Rating
+            };
+        }
     }
 }
