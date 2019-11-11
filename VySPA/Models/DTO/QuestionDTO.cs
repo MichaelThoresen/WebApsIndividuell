@@ -12,5 +12,7 @@ namespace VySPA.Models.DTO
         public String QuestionText { get; set; }
 
         public String AnswerText { get; set; }
+
+        public int Rating { get; set; }
     }
 }
