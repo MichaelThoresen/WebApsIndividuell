@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using VySPA.Models.DTO;
 using VySPA.Models.Entities;
 
@@ -63,6 +62,21 @@ namespace VySPA.Db.Repository
                 AnswerText = q.AnswerText,
                 Rating = q.Rating
             };
+        }
+
+        public bool CreateQuestion(QuestionDTO q)
+        {
+            var question = MapQuestion(q);
+            try
+            {
+                _context.Question.Add(question);
+                _context.SaveChanges();
+                return true;
+            } catch(Exception e)
+            {
+                System.Console.WriteLine(e);
+                return false;
+            }
         }
     }
 }
