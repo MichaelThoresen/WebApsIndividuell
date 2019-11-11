@@ -13,6 +13,6 @@ namespace VySPA.Db.Repository
 
         List<QuestionDTO> GetQuestionDTOs();
 
-        QuestionDTO MapQuestionDTO();
+        QuestionDTO MapQuestionDTO(Question q);
     }
 }

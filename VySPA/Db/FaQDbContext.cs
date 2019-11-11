@@ -13,6 +13,43 @@ namespace VySPA.Db
             : base(options)
         {
         }
-        public DbSet<Question> question { get; set; }
+        public DbSet<Question> Question { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Question>().HasData(
+                new Question
+                {
+                    QuestionText= "",
+                    AnswerText= "",
+                    Rating = 0
+                },
+                new Question
+                {
+                    QuestionText = "",
+                    AnswerText = "",
+                    Rating = 0
+                },
+                new Question
+                {
+                    QuestionText = "",
+                    AnswerText = "",
+                    Rating = 0
+                },
+                new Question
+                {
+                    QuestionText = "",
+                    AnswerText = "",
+                    Rating = 0
+                },
+                new Question
+                {
+                    QuestionText = "",
+                    AnswerText = "",
+                    Rating = 0
+                }
+            );
+        }
+
     }
 }

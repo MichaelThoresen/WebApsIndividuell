@@ -10,22 +10,23 @@ namespace VySPA.Db.Repository
     public class FAQrepoImpl : FAQrepo
     {
         private readonly FaQDbContext _context;
-        private List<Question> FindAllQuestions()
+        public List<Question> FindAllQuestions()
         {
-            return _context.question.ToList();
+            return _context.Question.ToList();
         }
 
-        private QuestionDTO MapQuestionDTO(Question q)
+        public QuestionDTO MapQuestionDTO(Question q)
         {
             return new QuestionDTO
             {
                 Id = q.Id,
                 QuestionText = q.QuestionText,
-                AnswerText = q.AnswerText
+                AnswerText = q.AnswerText,
+                Rating = q.Rating
             };
         }
 
-        private List<QuestionDTO> GetQuestionDTOs()
+        public List<QuestionDTO> GetQuestionDTOs()
         {
             List<Question> Questions = FindAllQuestions();
             var dtos = new List<QuestionDTO>();
