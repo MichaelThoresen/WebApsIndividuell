@@ -1,9 +1,9 @@
 ﻿import React from 'react';
 
-const answer = () => {
+const answer = ( props ) => {
     return(
         <div>
-            <p></p>
+            <p>{props.AnswerText}</p>
         </div>
         )
 }

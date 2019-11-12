@@ -1,9 +1,9 @@
 ﻿import React from 'react';
 
-const question = () => {
+const question = ( props ) => {
     return (
         <div>
-            <p></p>
+            <p>{props.QuestionText}</p>
         </div>
         )
 }

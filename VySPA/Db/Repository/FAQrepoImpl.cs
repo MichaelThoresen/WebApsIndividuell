@@ -9,6 +9,11 @@ namespace VySPA.Db.Repository
     public class FAQrepoImpl : FAQrepo
     {
         private readonly FaQDbContext _context;
+
+        public FAQrepoImpl(FaQDbContext FaQ)
+        {
+            _context = FaQ;
+        }
         public List<Question> FindAllQuestions()
         {
             return _context.Question.ToList();
