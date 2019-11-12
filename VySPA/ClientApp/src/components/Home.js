@@ -4,7 +4,7 @@ export class Home extends Component {
   displayName = Home.name
 
   render() {
-    return (
+      return (
       
     );
   }

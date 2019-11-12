@@ -7,19 +7,25 @@ import Rating from './Rating'
 const questionsandanswers = () => {
 
     //Fetch data here
+    fetch('api/FaQ/Questions')
+        .then(function () {
+
+        })
 
     return (
         <div>
             {list.map(item => (
-                <Row>
-                    <Question QuestionText={item.QuestionText}  />
-                </Row>
-                <Row>
-                    <Answer AnswerText={item.AnswerText} />
-                </Row>
-                <Row>
+                <div>
+                    <Row>
+                        <Question QuestionText={item.QuestionText}  />
+                    </Row>
+                    <Row>
+                        <Answer AnswerText={item.AnswerText} />
+                    </Row>
+                    <Row>
                     <Rating Rating={item.Rating} />
-                </Row>
+                    </Row>
+                </div>
             ))}
         </div>
     )

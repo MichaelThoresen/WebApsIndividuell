@@ -42,14 +42,12 @@ namespace VySPA.Db.Repository
             return dtos;
         }
 
-        public void UpdateQuestion(Question q)
+        public void UpdateQuestion(int Id, int Rating)
         {
-            var entity = _context.Question.FirstOrDefault(question => question.Id == q.Id);
+            var entity = _context.Question.FirstOrDefault(question => question.Id == Id);
             if(entity != null)
             {
-                entity.QuestionText = q.QuestionText;
-                entity.AnswerText = q.AnswerText;
-                entity.Rating = q.Rating;
+                entity.Rating = Rating;
 
                 _context.Question.Update(entity);
 
