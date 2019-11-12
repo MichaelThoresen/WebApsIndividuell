@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using VySPA.Db.Repository;
+using VySPA.Models.DTO;
 using VySPA.Models.Entities;
 
 namespace VySPA.Controllers
@@ -21,9 +22,9 @@ namespace VySPA.Controllers
         }
 
         [HttpGet("[action]")]
-        public List<Question> Questions()
+        public List<QuestionDTO> Questions()
         {
-            return _repo.FindAllQuestions();
+            return _repo.GetQuestionDTOs();
         }
     }
 }

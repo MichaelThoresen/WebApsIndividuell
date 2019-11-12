@@ -8,27 +8,35 @@ const questionsandanswers = () => {
 
     //Fetch data here
     fetch('api/FaQ/Questions')
-        .then(function () {
-
-        })
+        .then((resp) => resp.json())
+        .then(function (data) {
+            let list = data.results;
+            return list;
+        });
 
     return (
         <div>
             {list.map(item => (
                 <div>
-                    <Row>
-                        <Question QuestionText={item.QuestionText}  />
-                    </Row>
-                    <Row>
-                        <Answer AnswerText={item.AnswerText} />
-                    </Row>
-                    <Row>
-                    <Rating Rating={item.Rating} />
-                    </Row>
+                    <Accordion>
+                        <Accordion.Toggle eventKey="0"> 
+                            <Row>
+                                <Question QuestionText={item.QuestionText}  />
+                            </Row>
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="0">
+                            <Row>
+                                <Answer AnswerText={item.AnswerText} />
+                            </Row>
+                            <Row>
+                                <Rating Rating={item.Rating} />
+                            </Row>
+                        </Accordion.Collapse>
+                    </Accordion>
                 </div>
             ))}
         </div>
     )
 }
 
-return default questionsandanswers;
+export default questionsandanswers;

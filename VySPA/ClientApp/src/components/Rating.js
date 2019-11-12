@@ -22,4 +22,4 @@ const rating = ( props ) => {
         )
 }
 
-return default rating;
+export default rating;

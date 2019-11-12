@@ -8,4 +8,4 @@ const answer = ( props ) => {
         )
 }
 
-return default answer;
+export default answer;
