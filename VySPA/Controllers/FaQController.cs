@@ -26,5 +26,17 @@ namespace VySPA.Controllers
         {
             return _repo.GetQuestionDTOs();
         }
+
+        [HttpPut("[action]")]
+        public void UpdateRating(int Id, int Rating)
+        {
+            _repo.UpdateQuestion(Id, Rating);
+        }
+
+        [HttpPost("[action]")]
+        public bool CreateQuestion(QuestionDTO q)
+        {
+            return _repo.CreateQuestion(q);
+        }
     }
 }

@@ -14,5 +14,11 @@ namespace VySPA.Db.Repository
         List<QuestionDTO> GetQuestionDTOs();
 
         QuestionDTO MapQuestionDTO(Question q);
+
+        void UpdateQuestion(int Id, int Rating);
+
+        Question MapQuestion(QuestionDTO q);
+
+        bool CreateQuestion(QuestionDTO q);
     }
 }

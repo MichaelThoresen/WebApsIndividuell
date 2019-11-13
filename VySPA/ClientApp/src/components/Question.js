@@ -1,11 +1,17 @@
-﻿import React from 'react';
+﻿import React, { Component } from 'react';
 
-const question = ( props ) => {
-    return (
-        <div>
-            <p>{props.QuestionText}</p>
-        </div>
-        )
+class Question extends Component{
+    constructor(props) {
+        super();
+    }
+    render() {
+
+        return (
+            <div>
+                <p>{props.QuestionText}</p>
+            </div >
+        );
+    }
 }
 
-export default question;
+export default Question;
