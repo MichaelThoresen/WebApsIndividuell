@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using VySPA.Db.Repository;
 using VySPA.Models.DTO;
 using VySPA.Models.Entities;
@@ -22,9 +23,9 @@ namespace VySPA.Controllers
         }
 
         [HttpGet("[action]")]
-        public List<QuestionDTO> Questions()
+        public String Questions()
         {
-            return _repo.GetQuestionDTOs();
+            return JsonConvert.SerializeObject(_repo.GetQuestionDTOs());
         }
 
         [HttpPut("[action]")]
