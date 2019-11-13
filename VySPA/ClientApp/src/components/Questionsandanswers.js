@@ -15,7 +15,7 @@ class Questionsandanswers extends Component {
     };
     componentDidMount() {
         //Fetch data here
-        fetch('./api/FaQ/Questions')
+        fetch(window.location.href + '/api/FaQ/Questions')
             .then((resp) => resp.json())
             .then(data => this.setState({ questions: data.questions }));
     }
