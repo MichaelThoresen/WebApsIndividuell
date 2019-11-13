@@ -16,7 +16,7 @@ class Rating extends Component {
                         <button>Thumbs up</button>
                     </Col>
                     <Col>
-                        <p>{props.Rating}</p>
+                        <p>{this.props.Rating}</p>
                     </Col>
                     <Col>
                         <button>Thumbs down</button>
@@ -26,5 +26,4 @@ class Rating extends Component {
         );
     }
 }
-
 export default Rating;

@@ -8,10 +8,9 @@ class Question extends Component{
 
         return (
             <div>
-                <p>{props.QuestionText}</p>
+                <p>{this.props.QuestionText}</p>
             </div >
         );
     }
 }
-
-export default Question;
+export default Question

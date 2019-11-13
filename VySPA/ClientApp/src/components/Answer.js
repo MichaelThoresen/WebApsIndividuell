@@ -8,10 +8,9 @@ class Answer extends Component {
     render() {
         return (
             <div>
-                <p>{props.AnswerText}</p>
+                <p>{this.props.AnswerText}</p>
             </div>
         );
     }
 }
-
 export default Answer;

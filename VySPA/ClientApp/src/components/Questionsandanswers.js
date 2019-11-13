@@ -1,26 +1,30 @@
 ﻿import React, { Component } from 'react';
 import { Col, Row, Accordion } from 'react-bootstrap';
-import { Question } from './Question';
-import { Answer } from './Answer';
-import { Rating } from './Rating'
+import Question from './Question';
+import Answer from './Answer';
+import Rating from './Rating'
 
 class Questionsandanswers extends Component {
 
     constructor() {
         super();
-    //Fetch data here
-    /*fetch('api/FaQ/Questions')
-        .then((resp) => resp.json())
-        .then(function (data) {
-            let list = data.results;
-            return list;
-        });*/
+
+        this.state = {
+            questions: [],
+        };
+    };
+    componentDidMount() {
+        //Fetch data here
+        fetch('./api/FaQ/Questions')
+            .then((resp) => resp.json())
+            .then(data => this.setState({ questions: data.questions }));
     }
+
     render() {
         return (
             <div>
-                {list.map(item => (
-                    <div>
+                {this.state.questions.map(item => (
+                    <div key="item.Id">
                         <Accordion>
                             <Accordion.Toggle eventKey="0">
                                 <Row>
