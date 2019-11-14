@@ -26,10 +26,10 @@ namespace VyFaQ2.Controllers
             return _repo.GetQuestionDTOs();
         }
 
-        [HttpPut("[action]")]
-        public void UpdateRating(int Id, int Rating)
+        [HttpPut("{id}")]
+        public void UpdateRating(int id, int Rating)
         {
-            _repo.UpdateQuestion(Id, Rating);
+            _repo.UpdateQuestion(id, Rating);
         }
 
         [HttpPost("[action]")]

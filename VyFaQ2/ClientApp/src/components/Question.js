@@ -23,7 +23,7 @@ class Question extends Component {
                     <CardHeader onClick={this.handleClick}>
                         <p>{this.props.QuestionText}</p>
                     </CardHeader>
-                    <Answer AnswerText={this.props.AnswerText} Rating={this.props.Rating} isOpen={this.state.isOpen} />
+                    <Answer Id={this.props.Id} AnswerText={this.props.AnswerText} Rating={this.props.Rating} isOpen={this.state.isOpen} />
                 </Card>
             </div >
         );

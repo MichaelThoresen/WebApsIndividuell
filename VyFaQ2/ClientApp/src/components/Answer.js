@@ -14,7 +14,7 @@ class Answer extends Component {
                             <p>{this.props.AnswerText}</p>
                         </Row>
                         <Row>
-                            <Rating Rating={this.props.Rating} />
+                            <Rating Rating={this.props.Rating} Id={this.props.Id} />
                         </Row>
                     </CardBody>
                 </Collapse>
