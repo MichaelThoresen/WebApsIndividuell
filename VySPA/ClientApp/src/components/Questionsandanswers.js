@@ -2,7 +2,9 @@
 import { Col, Row, Accordion } from 'react-bootstrap';
 import Question from './Question';
 import Answer from './Answer';
-import Rating from './Rating'
+import Rating from './Rating';
+import axios from 'axios';
+import Axios from 'axios';
 
 class Questionsandanswers extends Component {
 
@@ -15,9 +17,19 @@ class Questionsandanswers extends Component {
     };
     componentDidMount() {
         //Fetch data here
-        fetch(window.location.href + '/api/FaQ/Questions')
-            .then((resp) => resp.json())
-            .then(data => this.setState({ questions: data.questions }));
+        this.showQuestion();
+    }
+
+    async showQuestion() {
+        axios.get('api/FaQ')
+            .then(function (response){
+            var data = response.json();
+            this.setState({ question: data, isFetched: true });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+        console.log("I got here")
     }
 
     render() {
@@ -26,12 +38,12 @@ class Questionsandanswers extends Component {
                 {this.state.questions.map(item => (
                     <div key="item.Id">
                         <Accordion>
-                            <Accordion.Toggle eventKey="0">
+                            <Accordion.Toggle eventKey="{item.id}">
                                 <Row>
                                     <Question QuestionText={item.QuestionText} />
                                 </Row>
                             </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="0">
+                            <Accordion.Collapse eventKey="{item.id}">
                                 <Row>
                                     <Answer AnswerText={item.AnswerText} />
                                 </Row>

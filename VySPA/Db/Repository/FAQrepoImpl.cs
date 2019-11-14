@@ -6,7 +6,7 @@ using VySPA.Models.Entities;
 
 namespace VySPA.Db.Repository
 {
-    public class FAQrepoImpl : FAQrepo
+    public class FAQrepoImpl : IFAQrepo
     {
         private readonly FaQDbContext _context;
 
@@ -36,7 +36,8 @@ namespace VySPA.Db.Repository
             var dtos = new List<QuestionDTO>();
             foreach(var q in Questions)
             {
-                MapQuestionDTO(q);
+                var Q = MapQuestionDTO(q);
+                dtos.Add(Q);
             }
 
             return dtos;

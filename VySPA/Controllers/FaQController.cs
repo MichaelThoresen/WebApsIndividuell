@@ -15,17 +15,17 @@ namespace VySPA.Controllers
     [ApiController]
     public class FaQController : ControllerBase
     {
-        private readonly FAQrepo _repo;
+        private readonly IFAQrepo _repo;
 
-        public FaQController (FAQrepo faqrepo)
+        public FaQController (IFAQrepo repo)
         {
-            _repo = faqrepo;
+            _repo = repo;
         }
 
-        [HttpGet("[action]")]
-        public String Questions()
+        [HttpGet]
+        public List<QuestionDTO> Questions()
         {
-            return JsonConvert.SerializeObject(_repo.GetQuestionDTOs());
+            return _repo.GetQuestionDTOs();
         }
 
         [HttpPut("[action]")]

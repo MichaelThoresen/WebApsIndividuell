@@ -7,7 +7,7 @@ using VySPA.Models.Entities;
 
 namespace VySPA.Db.Repository
 {
-    public interface FAQrepo
+    public interface IFAQrepo
     {
         List<Question> FindAllQuestions();
 
