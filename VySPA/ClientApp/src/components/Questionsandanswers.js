@@ -23,8 +23,9 @@ class Questionsandanswers extends Component {
     async showQuestion() {
         axios.get('api/FaQ')
             .then(function (response){
-            var data = response.json();
-            this.setState({ question: data, isFetched: true });
+                var data = response.json();
+                this.setState({ question: data, isFetched: true });
+                console.log(this.state)
             })
             .catch(function (error) {
                 console.log(error);

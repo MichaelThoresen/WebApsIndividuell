@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29209.62
+VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VySPA", "VySPA\VySPA.csproj", "{A9ED2CFB-C432-40EB-AD0D-AD8DF918A6AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VyFaQ2", "VyFaQ2\VyFaQ2.csproj", "{5780EEC5-B67F-4402-9178-02E194783779}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A9ED2CFB-C432-40EB-AD0D-AD8DF918A6AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9ED2CFB-C432-40EB-AD0D-AD8DF918A6AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9ED2CFB-C432-40EB-AD0D-AD8DF918A6AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9ED2CFB-C432-40EB-AD0D-AD8DF918A6AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5780EEC5-B67F-4402-9178-02E194783779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5780EEC5-B67F-4402-9178-02E194783779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5780EEC5-B67F-4402-9178-02E194783779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5780EEC5-B67F-4402-9178-02E194783779}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4A988B07-F6BF-4CE0-9066-34F0CDE64EEC}
+		SolutionGuid = {9F2FE4B0-2ACB-476A-88F1-57260783333E}
 	EndGlobalSection
 EndGlobal

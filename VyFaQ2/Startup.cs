@@ -1,15 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using VySPA.Controllers;
-using VySPA.Db;
-using VySPA.Db.Repository;
+using Microsoft.Extensions.Hosting;
+using VyFaQ2.Model.DB;
+using VyFaQ2.Model.DB.Repositories;
 
-namespace VySPA
+namespace VyFaQ2
 {
     public class Startup
     {
@@ -23,7 +22,7 @@ namespace VySPA
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             services.AddScoped<IFAQrepo, FAQrepoImpl>();
             services.AddControllers();
             var connection = @"Server=(localdb)\mssqllocaldb; Database= FaQ;Trusted_Connection=True;ConnectRetryCount=0";
@@ -37,7 +36,7 @@ namespace VySPA
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -51,11 +50,13 @@ namespace VySPA
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
-            app.UseMvc(routes =>
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
+                    pattern: "{controller}/{action=Index}/{id?}");
             });
 
             app.UseSpa(spa =>
