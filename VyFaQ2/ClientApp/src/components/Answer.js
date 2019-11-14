@@ -1,15 +1,23 @@
 ﻿import React, { Component } from 'react';
+import { Card, CardBody, Collapse, Row } from 'reactstrap'
+import Rating from './Rating';
 
 class Answer extends Component {
 
-    constructor(props) {
-        super();
-    }
+        
+
     render() {
         return (
-            <div>
-                <p>{this.props.AnswerText}</p>
-            </div>
+                <Collapse isOpen={this.state.isOpen}>
+                    <CardBody>
+                        <Row>
+                            <p>{this.props.AnswerText}</p>
+                        </Row>
+                        <Row>
+                            <Rating Rating={this.props.Rating} />
+                        </Row>
+                    </CardBody>
+                </Collapse>
         );
     }
 }

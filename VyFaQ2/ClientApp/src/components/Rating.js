@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import { Col, Row } from 'reactstrap';
+import { Col, Row, Button } from 'reactstrap';
 
 class Rating extends Component {
     constructor() {
@@ -9,17 +9,19 @@ class Rating extends Component {
         return (
             <div>
                 <Row>
-                    <p>Var dette nyttig?</p>
+                    <Col>
+                        <p>Var dette nyttig?</p>
+                    </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <button>Ja!</button>
+                        <Button color="success">Ja!</Button>
                     </Col>
                     <Col>
                         <p>{this.props.Rating}</p>
                     </Col>
                     <Col>
-                        <button>Nei!</button>
+                        <Button color="danger">Nei!</Button>
                     </Col>
                 </Row>
             </div>

@@ -34,13 +34,7 @@ class Questionsandanswers extends Component {
                 {this.state.questions.map(item => (
                     <div key={item.id}>
                         <Row>
-                            <Question QuestionText={item.questionText} />
-                        </Row>
-                        <Row>
-                            <Answer AnswerText={item.answerText} />
-                        </Row>
-                        <Row>
-                            <Rating Rating={item.rating} />
+                            <Question QuestionText={item.questionText} AnswerText={item.answerText} Rating={item.rating}/>
                         </Row>
                     </div>
                 ))}

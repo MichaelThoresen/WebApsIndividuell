@@ -1,14 +1,29 @@
 ﻿import React, { Component } from 'react';
+import { Card, CardHeader } from 'reactstrap';
+import Answer from './Answer';
+import Rating from './Rating';
 
 class Question extends Component {
-    constructor(props) {
-        super();
+
+    state = {
+        isOpen: false
     }
+
+    handleClick() {
+        this.setState({isOpen: !isOpen})
+
+    }
+
     render() {
 
         return (
             <div>
-                <p>{this.props.QuestionText}</p>
+                <Card>
+                    <CardHeader onClick={handleClick}>
+                        <p>{this.props.QuestionText}</p>
+                    </CardHeader>
+                    <Answer AnswerText={this.props.AnswerText} Rating={this.props.Rating} isOpen={this.state.isOpen} />
+                </Card>
             </div >
         );
     }
