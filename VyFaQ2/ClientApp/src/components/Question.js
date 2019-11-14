@@ -9,8 +9,9 @@ class Question extends Component {
         isOpen: false
     }
 
-    handleClick() {
-        this.setState({isOpen: !isOpen})
+    handleClick = () => {
+        console.log(this.state)
+        this.setState({ isOpen: !this.state.isOpen})
 
     }
 
@@ -19,7 +20,7 @@ class Question extends Component {
         return (
             <div>
                 <Card>
-                    <CardHeader onClick={handleClick}>
+                    <CardHeader onClick={this.handleClick}>
                         <p>{this.props.QuestionText}</p>
                     </CardHeader>
                     <Answer AnswerText={this.props.AnswerText} Rating={this.props.Rating} isOpen={this.state.isOpen} />

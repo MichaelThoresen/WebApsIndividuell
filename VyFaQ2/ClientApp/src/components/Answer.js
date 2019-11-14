@@ -8,7 +8,7 @@ class Answer extends Component {
 
     render() {
         return (
-                <Collapse isOpen={this.state.isOpen}>
+                <Collapse isOpen={this.props.isOpen}>
                     <CardBody>
                         <Row>
                             <p>{this.props.AnswerText}</p>
