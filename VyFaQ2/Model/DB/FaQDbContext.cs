@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using VyFaQ2.Model.DB.Repositories;
 using VyFaQ2.Model.DTO;
+using VyFaQ2.Model.Entities;
 
 namespace VyFaQ2.Model.DB
 {
@@ -16,6 +17,7 @@ namespace VyFaQ2.Model.DB
         {
         }
         public DbSet<Question> Question { get; set; }
+        public DbSet<UserQuestion> UserQuestion { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

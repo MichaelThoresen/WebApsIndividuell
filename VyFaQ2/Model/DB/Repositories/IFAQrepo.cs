@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VyFaQ2.Model.DTO;
+using VyFaQ2.Model.Entities;
 
 namespace VyFaQ2.Model.DB.Repositories
 {
@@ -18,6 +19,14 @@ namespace VyFaQ2.Model.DB.Repositories
 
         Question MapQuestion(QuestionDTO q);
 
-        bool CreateQuestion(QuestionDTO q);
+        bool CreateQuestion(UserQuestionDTO q);
+
+        UserQuestion MapUserQuestion(UserQuestionDTO q);
+
+        UserQuestionDTO MapUserQuestionDTO(UserQuestion q);
+
+        List<UserQuestionDTO> GetUserQuestionDTOs();
+
+        List<UserQuestion> FindAllUserQuestions();
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VyFaQ2.Model.DTO;
+using VyFaQ2.Model.Entities;
 
 namespace VyFaQ2.Model.DB.Repositories
 {
@@ -68,12 +69,12 @@ namespace VyFaQ2.Model.DB.Repositories
             };
         }
 
-        public bool CreateQuestion(QuestionDTO q)
+        public bool CreateQuestion(UserQuestionDTO q)
         {
-            var question = MapQuestion(q);
+            var question = MapUserQuestion(q);
             try
             {
-                _context.Question.Add(question);
+                _context.UserQuestion.Add(question);
                 _context.SaveChanges();
                 return true;
             }
@@ -82,6 +83,45 @@ namespace VyFaQ2.Model.DB.Repositories
                 System.Console.WriteLine(e);
                 return false;
             }
+        }
+
+        public UserQuestion MapUserQuestion(UserQuestionDTO q)
+        {
+            return new UserQuestion
+            {
+                Id = q.Id,
+                QuestionText = q.QuestionText,
+                Email = q.Email,
+                Name = q.Name
+            };
+        }
+
+        public List<UserQuestion> FindAllUserQuestions()
+        {
+            return _context.UserQuestion.ToList();
+        }
+
+        public UserQuestionDTO MapUserQuestionDTO(UserQuestion q)
+        {
+            return new UserQuestionDTO
+            {
+                Id = q.Id,
+                QuestionText = q.QuestionText,
+                Email = q.Email,
+                Name = q.Name
+            };
+        }
+
+        public List<UserQuestionDTO> GetUserQuestionDTOs()
+        {
+            List<UserQuestion> questions = FindAllUserQuestions();
+            var dtos = new List<UserQuestionDTO>();
+            foreach (var q in questions)
+            {
+                var dto = MapUserQuestionDTO(q);
+                dtos.Add(dto);
+            }
+            return dtos;
         }
     }
 }

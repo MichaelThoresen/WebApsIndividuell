@@ -6,30 +6,32 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using VyFaQ2.Model.DB.Repositories;
 using VyFaQ2.Model.DTO;
+using VyFaQ2.Model.Entities;
 
 namespace VyFaQ2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FaQController : ControllerBase
+    public class SubmitController : ControllerBase
     {
         private readonly IFAQrepo _repo;
 
-        public FaQController(IFAQrepo repo)
+        public SubmitController(IFAQrepo repo)
         {
             _repo = repo;
         }
 
         [HttpGet]
-        public List<QuestionDTO> Questions()
+        public List<UserQuestionDTO> GetUserQuestions()
         {
-            return _repo.GetQuestionDTOs();
+            return _repo.GetUserQuestionDTOs();
         }
 
-        [HttpPut("{id}")]
-        public void UpdateRating(int id, int Rating)
+        [HttpPost]
+        public bool SubmitUserQuestion(UserQuestionDTO q)
         {
-            _repo.UpdateQuestion(id, Rating);
+            return _repo.CreateQuestion(q);
         }
+
     }
 }
