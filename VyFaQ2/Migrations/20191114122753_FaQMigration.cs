@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace VyFaQ2.Migrations
+﻿namespace VyFaQ2.Migrations
 {
     public partial class FaQMigration : Migration
     {

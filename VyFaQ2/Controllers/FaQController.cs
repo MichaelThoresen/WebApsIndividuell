@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using VyFaQ2.Model.DB.Repositories;
+﻿using VyFaQ2.Model.DB.Repositories;
 using VyFaQ2.Model.DTO;
 
 namespace VyFaQ2.Controllers

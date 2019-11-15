@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using VyFaQ2.Model.DTO;
+﻿using VyFaQ2.Model.DTO;
 using VyFaQ2.Model.Entities;
 
 namespace VyFaQ2.Model.DB.Repositories
