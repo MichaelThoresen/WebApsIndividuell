@@ -10,7 +10,6 @@ class UserQuestion extends Component {
     }
 
     handleClick = () => {
-        console.log(this.state)
         this.setState({ isOpen: !this.state.isOpen })
 
     }
@@ -19,7 +18,7 @@ class UserQuestion extends Component {
 
         return (
             <Card>
-                <CardHeader onClick={this.handleClick}>
+                <CardHeader onClick={this.handleClick} style={{ backgroundColor: '#00866e', borderColor: '#00866e' }}>
                     <p>{this.props.QuestionText}</p>
                 </CardHeader>
                 <Collapse isOpen={this.state.isOpen}>
