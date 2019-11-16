@@ -14,9 +14,7 @@ class Rating extends Component {
     handleDownvote = (Id, Rating) => {
 
         var newRate = Rating - 1;
-        this.setState ={
-            clicked: true
-        };
+        this.setState({ clicked: !this.state.clicked })
         console.log(this.state)
 
         axios.put('/api/FaQ/' + Id + '?rating=' + newRate) 
@@ -35,24 +33,24 @@ class Rating extends Component {
             <div>
                 <Row>
                     <Col>
-                        <p>Var dette nyttig?</p>
+                        <p>Was this useful?</p>
                     </Col>
                 </Row>
                 <Row>
                     {this.state.clicked == false ? (
                         <>
                             <Col>
-                                <Button color="success" onClick={() => this.handleUpvote(this.props.Id, this.props.Rating)}>Ja!</Button>
+                                <Button color="success" onClick={() => this.handleUpvote(this.props.Id, this.props.Rating)}>Yes!</Button>
                             </Col>
                             <Col>
                                 <p>{this.props.Rating}</p>
                             </Col>
                             <Col>
-                                <Button color="danger" onClick={() => this.handleDownvote(this.props.Id, this.props.Rating)}>Nei!</Button>
+                                <Button color="danger" onClick={() => this.handleDownvote(this.props.Id, this.props.Rating)}>No!</Button>
                             </Col>
                         </>
                         ) : (
-                            <Col><Alert color="success">Takk for tilbakemeldingen</Alert></Col>
+                            <Col><Alert color="success">Thanks for your feedback</Alert></Col>
                         )}
                 </Row>
             </div>

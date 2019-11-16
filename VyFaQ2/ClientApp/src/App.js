@@ -5,6 +5,7 @@ import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import Submit from './components/SubmitQuestion/Submit';
+import UserQuestions from './components/UserQuestions/UserQuestions'
 
 import './custom.css'
 
@@ -16,7 +17,7 @@ export default class App extends Component {
       <Layout>
         <Route exact path='/' component={Home} />
         <Route path='/submit' component={Submit} />
-        <Route path='/fetch-data' component={FetchData} />
+        <Route path='/userQuestions' component={UserQuestions} />
       </Layout>
     );
   }

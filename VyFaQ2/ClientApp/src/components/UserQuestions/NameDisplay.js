@@ -6,7 +6,7 @@ class NameDisplay extends Component {
 
         return (
             <div>
-                <p>{props.Name}</p>
+                <p>{this.props.Name}</p>
             </div>
         )
     }

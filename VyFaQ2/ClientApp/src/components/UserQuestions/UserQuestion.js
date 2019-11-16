@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import { Col, Row, Card, CardHeader, CardBody } from 'reactstrap';
+import { Col, Row, Card, CardHeader, CardBody, Collapse } from 'reactstrap';
 import EmailDisplay from './EmailDisplay';
 import NameDisplay from './NameDisplay';
 
@@ -20,21 +20,23 @@ class UserQuestion extends Component {
         return (
             <Card>
                 <CardHeader onClick={this.handleClick}>
-                    <p>{props.QuestionText}</p>
+                    <p>{this.props.QuestionText}</p>
                 </CardHeader>
-                <CardBody>
-                    <Row>
-                        <Col>
-                            <p>Submitted by:</p>
-                        </Col>
-                        <Col>
-                            <EmailDisplay Email={props.Email} />
-                        </Col>
-                        <Col>
-                            <NameDisplay Name={props.Name} />
-                        </Col>
-                    </Row>
-                </CardBody>
+                <Collapse isOpen={this.state.isOpen}>
+                    <CardBody>
+                        <Row>
+                            <Col>
+                                <p>Submitted by:</p>
+                            </Col>
+                            <Col>
+                                <EmailDisplay Email={this.props.Email} />
+                            </Col>
+                            <Col>
+                                <NameDisplay Name={this.props.Name} />
+                            </Col>
+                        </Row>
+                    </CardBody>
+                </Collapse>
             </Card>
             )
     }

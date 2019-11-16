@@ -4,9 +4,9 @@ import { FormGroup, Input, Label } from 'reactstrap';
 class Email extends Component {
     render() {
         return (
-            <FormGroup>
+            <FormGroup >
                 <Label>Email:</Label>
-                <Input type="email" />
+                <Input type="email" id="Email" onChange={this.props.changeemail} />
             </FormGroup>
             )
     }

@@ -31,10 +31,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20191116084805_VyMigration.cs" />
     <Compile Remove="Migrations\20191116084805_VyMigration.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
+    <Compile Remove="Migrations\20191116093701_FaQMigration.cs" />
+    <Compile Remove="Migrations\20191116093701_FaQMigration.Designer.cs" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

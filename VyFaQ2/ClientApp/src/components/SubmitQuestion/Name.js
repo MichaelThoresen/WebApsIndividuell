@@ -6,7 +6,7 @@ class Name extends Component {
         return (
             <FormGroup>
                 <Label>Name:</Label>
-                <Input />
+                <Input id="Name" onChange={this.props.changename} />
             </FormGroup>
             )
     }

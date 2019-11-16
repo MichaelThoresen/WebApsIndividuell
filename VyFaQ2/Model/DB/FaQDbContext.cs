@@ -47,7 +47,6 @@ namespace VyFaQ2.Model.DB
             modelBuilder.Entity<UserQuestion>().HasData(
                 new UserQuestion
                 {
-                    Id = 1,
                     QuestionText = "How do you uninstall the Vy app",
                     Email = "Funnygai@Funneh.com",
                     Name = "Funny McFunnison"

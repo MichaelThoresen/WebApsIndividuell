@@ -6,7 +6,7 @@ class EmailDisplay extends Component {
 
         return (
             <div>
-                <p>{props.Email}</p>
+                <p>{this.props.Email}</p>
             </div>
             )
     }

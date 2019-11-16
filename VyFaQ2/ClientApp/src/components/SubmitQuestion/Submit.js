@@ -8,20 +8,24 @@ class Submit extends Component {
 
     render() {
         return (
-            <Form onSubmit={props.submit}>
-                <Row>
-                    <Questionbox />
-                </Row>
+            <Form onSubmit={this.props.submit}>
                 <Row>
                     <Col>
-                        <Email />
-                    </Col>
-                    <Col>
-                        <Name />
+                        <Questionbox change={this.props.changequestion} />
                     </Col>
                 </Row>
                 <Row>
-                    <Button color="info" type="submit">Submit</Button>
+                    <Col>
+                        <Email change={this.props.changeemail}  />
+                    </Col>
+                    <Col>
+                        <Name change={this.props.changename} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Button color="info" type="submit">Submit</Button>
+                    </Col>
                 </Row>
             </Form>
         )

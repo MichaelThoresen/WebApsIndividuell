@@ -5,10 +5,11 @@ class Questionbox extends Component {
 
     render() {
         return (
-                <FormGroup>
-                    <Label>Input Question Here!</Label>
-                    <Input type="textarea" />
-                </FormGroup>
+            <FormGroup>
+                <Label>Input Question Here!</Label>
+                <Input type="textarea" id="QuestionText" onChange={() => this.props.changequestion} />
+            </FormGroup>
+
             )
     }
 }

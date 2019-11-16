@@ -61,7 +61,6 @@ namespace VyFaQ2.Model.DB.Repositories
         {
             return new Question
             {
-                Id = q.Id,
                 QuestionText = q.QuestionText,
                 AnswerText = q.AnswerText,
                 Rating = q.Rating
@@ -88,7 +87,6 @@ namespace VyFaQ2.Model.DB.Repositories
         {
             return new UserQuestion
             {
-                Id = q.Id,
                 QuestionText = q.QuestionText,
                 Email = q.Email,
                 Name = q.Name
@@ -104,7 +102,6 @@ namespace VyFaQ2.Model.DB.Repositories
         {
             return new UserQuestionDTO
             {
-                Id = q.Id,
                 QuestionText = q.QuestionText,
                 Email = q.Email,
                 Name = q.Name

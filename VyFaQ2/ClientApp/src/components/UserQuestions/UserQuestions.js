@@ -1,5 +1,7 @@
 ﻿import React, { Component } from 'react';
 import UserQuestion from './UserQuestion';
+import axios from 'axios';
+import { Row, Col } from 'reactstrap';
 
 
 class UserQuestions extends Component {
@@ -30,9 +32,11 @@ class UserQuestions extends Component {
         return (
             <div>
                 {this.state.questions.map(item => (
-                    <div key={item.Id}>
+                    <div key={item.email}>
                         <Row>
-                            <UserQuestion QuestionText={item.QuestionText} Email={item.Email} Name={item.Name} />
+                            <Col>
+                                <UserQuestion QuestionText={item.questionText} Email={item.email} Name={item.name} />
+                            </Col>
                         </Row>
                     </div>
                     ))}
