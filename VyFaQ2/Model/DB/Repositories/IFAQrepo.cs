@@ -1,4 +1,5 @@
-﻿using VyFaQ2.Model.DTO;
+﻿using System.Collections.Generic;
+using VyFaQ2.Model.DTO;
 using VyFaQ2.Model.Entities;
 
 namespace VyFaQ2.Model.DB.Repositories

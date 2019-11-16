@@ -1,4 +1,7 @@
-﻿namespace VyFaQ2.Model.DB
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace VyFaQ2.Model.DB
 {
     public class Question
     {

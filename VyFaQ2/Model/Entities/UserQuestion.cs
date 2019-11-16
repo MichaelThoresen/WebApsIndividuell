@@ -1,4 +1,7 @@
-﻿namespace VyFaQ2.Model.Entities
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace VyFaQ2.Model.Entities
 {
     public class UserQuestion
     {

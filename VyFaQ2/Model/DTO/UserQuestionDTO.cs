@@ -1,4 +1,7 @@
-﻿namespace VyFaQ2.Model.DTO
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace VyFaQ2.Model.DTO
 {
     public class UserQuestionDTO
     {
