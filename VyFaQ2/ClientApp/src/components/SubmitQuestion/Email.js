@@ -6,7 +6,7 @@ class Email extends Component {
         return (
             <FormGroup >
                 <Label>Email:</Label>
-                <Input type="email" id="Email" onChange={(event) => this.props.changeemail(event)} />
+                <Input type="email" id="Email" onChange={this.props.change} />
             </FormGroup>
             )
     }

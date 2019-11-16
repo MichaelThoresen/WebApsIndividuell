@@ -18,7 +18,7 @@ class UserQuestion extends Component {
 
         return (
             <Card>
-                <CardHeader onClick={this.handleClick} style={{ backgroundColor: '#00866e', borderColor: '#00866e' }}>
+                <CardHeader onClick={this.handleClick}>
                     <p>{this.props.QuestionText}</p>
                 </CardHeader>
                 <Collapse isOpen={this.state.isOpen}>

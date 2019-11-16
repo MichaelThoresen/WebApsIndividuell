@@ -43,7 +43,7 @@ namespace VyFaQ2.Model.DB
                     AnswerText = "The easiest way to retrieve tickets purchased online at vy.no is through the Vy app. Tickets may also be downloaded as a PDF or retrieved on board the train or at a ticket vending machine, a staffed station, or select Narvesen convenience-store kiosks.",
                     Rating = 0
                 }
-            ) ;
+            );
             modelBuilder.Entity<UserQuestion>().HasData(
                 new UserQuestion
                 {
