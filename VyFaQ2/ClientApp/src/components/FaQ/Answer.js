@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import { Card, CardBody, Collapse, Row } from 'reactstrap'
+import { CardBody, Collapse, Row } from 'reactstrap'
 import Rating from './Rating';
 
 class Answer extends Component {

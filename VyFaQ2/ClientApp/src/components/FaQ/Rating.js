@@ -15,7 +15,6 @@ class Rating extends Component {
 
         var newRate = Rating - 1;
         this.setState({ clicked: !this.state.clicked })
-        console.log(this.state)
 
         axios.put('/api/FaQ/' + Id + '?rating=' + newRate) 
     }
@@ -24,7 +23,6 @@ class Rating extends Component {
 
         var newRate = Rating + 1;
         this.setState({clicked: !this.state.clicked})
-        console.log(this.state)
 
         axios.put('/api/FaQ/' + Id + '?rating=' + newRate)
     }
@@ -37,7 +35,7 @@ class Rating extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    {this.state.clicked == false ? (
+                    {this.state.clicked === false ? (
                         <>
                             <Col>
                                 <Button color="success" onClick={() => this.handleUpvote(this.props.Id, this.props.Rating)}>Yes!</Button>

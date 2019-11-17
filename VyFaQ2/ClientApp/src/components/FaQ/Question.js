@@ -1,7 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { Card, CardHeader } from 'reactstrap';
 import Answer from './Answer';
-import Rating from './Rating';
 
 class Question extends Component {
 
@@ -10,7 +9,6 @@ class Question extends Component {
     }
 
     handleClick = () => {
-        console.log(this.state)
         this.setState({ isOpen: !this.state.isOpen})
 
     }

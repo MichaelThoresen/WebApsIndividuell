@@ -24,8 +24,6 @@ class Submit extends Component {
     }
 
     inputChangeHandler = (event) => {
-        console.log(this.state);
-        console.log("I got here");
         this.setState({ [`${event.target.id}`]: event.target.value })
     }
 

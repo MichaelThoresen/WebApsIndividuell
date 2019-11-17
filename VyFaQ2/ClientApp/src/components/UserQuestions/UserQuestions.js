@@ -21,10 +21,8 @@ class UserQuestions extends Component {
     async showQuestion() {
         axios.get('/api/Submit')
             .then((response) => {
-                console.log(response);
                 this.setState({ questions: response.data });
             })
-        console.log("I got here")
     }
 
     render() {
